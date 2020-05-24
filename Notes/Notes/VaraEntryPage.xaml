@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.VaraEntryPage">
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+
+        <Style TargetType="Button"
+               ApplyToDerivedTypes="True"
+               CanCascade="True">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="CornerRadius" Value="2" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Margin="{StaticResource PageMargin}">
+        <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center" />
+        <Image Source="{Binding StringBilden}"
+               x:Name="bild"
+               HorizontalOptions="Center" />
+        <Editor Placeholder="Lägg till Varunamn"
+                Text="{Binding Text}"
+                HeightRequest="60" />
+        <Editor Placeholder="Lägg till tillverkare"
+                Text="{Binding Manufacturer}"
+                HeightRequest="60" />
+        <Editor Placeholder="Lägg till beskrivning"
+                Text="{Binding Description}"
+                HeightRequest="60" />
+        <Editor Placeholder="Ändra Bäst-Före-Datum"
+                Text="{Binding Date}"
+                HeightRequest="60" />
+        <Editor Placeholder="Lägg till Antal"
+                Text="{Binding Amount}"
+                HeightRequest="60" />
+        <Editor Placeholder="Ändra bild"
+                Text="{Binding StringBilden}"
+                HeightRequest="60" />
+        <Button Text="Ändra bild på varan"
+                HeightRequest="60" 
+                Clicked="OpenImageClicked" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked"/>
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/> 
+        </Grid>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>
+

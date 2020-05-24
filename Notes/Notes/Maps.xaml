@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:map="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms"
+             mc:Ignorable="d"
+             x:Class="Notes.Maps"
+             Title="Maps">
+    <ContentPage.Content>
+        <Grid>
+            <maps:SfMaps x:Name="karta" ZoomLevel="5" BackgroundColor="Black">
+                <maps:SfMaps.Layers>
+
+                    <maps:ImageryLayer LayerType="Bing"
+                                       BingMapStyle="Road"
+                                       BingMapKey=" AqKC9pSsPg265tHZDpJoVqALmOJ3cBJfbpUP-mHuP3sXk64CkFyNEAKFBRF1ky7G"
+                                       GeoCoordinates="59.27412,15.2066">
+
+                        <maps:ImageryLayer.MarkerSettings>
+                            <maps:MapMarkerSetting IconColor="red"
+                                                   IconSize="12"
+                                                   MarkerIcon="Circle"/>
+                        </maps:ImageryLayer.MarkerSettings>
+                        <maps:ImageryLayer.Markers>
+                            <maps:MapMarker Label="Orebro" Latitude="59.27412" Longitude="15.2066"/>
+                            <maps:MapMarker Label="Orebro" Latitude="59.4" Longitude="15.4"/>
+                        </maps:ImageryLayer.Markers>
+                    </maps:ImageryLayer>
+                </maps:SfMaps.Layers>
+            </maps:SfMaps>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

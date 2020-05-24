@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:pages="clr-namespace:Notes;assembly=Notes"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.BarItemColor ="#3FBFF3"
+             android:TabbedPage.BarSelectedItemColor="#3FBFF3"
+             x:Class="Notes.TabbedPage1">
+
+    <!--Pages can be added as references or inline-->
+    <pages:MainPage IconImageSource="homeicon.png"/>
+    <pages:Maps IconImageSource="MapLogo.png"/>
+    <pages:VaraPage IconImageSource="boxicon.png" />
+</TabbedPage>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.VaraPage"
+             Title="Varor">
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type ListView}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lägg till ny vara"
+                     Clicked="OnVaraAddedClicked"/> 
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <SearchBar TextChanged="OnTextChanged" />
+    <ListView x:Name="MainListView"
+              Margin="{StaticResource PageMargin}"
+              ItemSelected="OnListViewItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding StringBilden}" />
+                                <Label Text="{Binding Text}"
+                                TextColor="Black" />
+                                <Label Text="{Binding Amount}" TextColor="Black" />
+                                <Label Text="Kg" TextColor="Black" />
+                                <Label Text="{Binding Date}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="Black" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+</ContentPage>
+
+

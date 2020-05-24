@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.NewEntryPage">
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+
+        <Style TargetType="Button"
+               ApplyToDerivedTypes="True"
+               CanCascade="True">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="CornerRadius" Value="2" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Margin="{StaticResource PageMargin}">
+        <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+        <Button Text="Scanna Varukod" x:Name="btnScan" />
+            <Image
+                   x:Name="bild"
+                   HorizontalOptions="Center" />
+            <Editor Placeholder="Lägg till Varunamn"
+                Text="{Binding Text}"
+                HeightRequest="60" />
+            <Editor Placeholder="Lägg till tillverkare"
+                Text="{Binding Manufacturer}"
+                HeightRequest="60" />
+            <Editor Placeholder="Lägg till beskrivning"
+                Text="{Binding Description}"
+                HeightRequest="60" />
+            <Editor Placeholder="Lägg till Bäst-Före-Datum"
+                Text="{Binding Date}"
+                HeightRequest="60" />
+            <Editor Placeholder="Lägg till Antal"
+                Text="{Binding Amount}"
+                HeightRequest="60" />
+            <Editor Placeholder="Lägg till Varukod"
+                x:Name="barcode"
+                Text="{Binding ProductCode}"
+                HeightRequest="60" />
+            <Button Text=" Lägg till en bild på varan"
+                HeightRequest="60" 
+                Clicked="OpenImageClicked" />
+        <Button Text="Lägg till ny vara"
+                HeightRequest="60"
+                Clicked="OnSaveButtonClicked"/>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>
